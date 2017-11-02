@@ -9,3 +9,15 @@ This is a php script that I included here to show where rsnapshot-once.py origin
 ## rsnapshot-once.py
 
 This is my port of the above script for python. Particularly I made it to run properly with Python version 3.4. I made some additions though.
+
+	Usage:
+	rsnapshot-once [-c CFGFILE] (sync|hourly [<N>]|daily|monthly)
+	rsnapshot-once -h
+
+	Options:
+	-c CFGFILE      specify the configfile that rsnapshot should use
+					[default: /etc/rsnapshot.conf]
+	-h              display help
+
+	By passing the <N> argument with hourly, you can adjust the hourly intervals. Defaults to 6 if not given, meaning every 4 hours.
+	This script will, as it is designed for now, run in systemd environments. You can use it in non systemd environments by removing or adjusting the wakeup-part.
