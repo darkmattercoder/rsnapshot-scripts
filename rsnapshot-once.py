@@ -34,6 +34,7 @@
             -h              display help
 
            By passing the <N> argument with hourly, you can adjust the hourly intervals. Defaults to 6 if not given, meaning every 4 hours.
+           This script will, as it is designed for now, run in systemd environments. You can use it in non systemd environments by removing or adjusting the wakeup-part.
 """
 
 import os.path
