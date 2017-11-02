@@ -53,13 +53,13 @@ from shutil import rmtree
 def logf(logstring,logfile=None,prefix=""):
 
 	if logfile:
-		logstring = "Writing to logfile: " + logstring
+		logstring = prefix + logstring
 		try:
 			with open(logfile,'a') as logfile:
-				logfile.write(prefix + logstring + "\n")
+				logfile.write(logstring + "\n")
 		except FileNotFoundError:
 			logging.critical("Specified logfile does not exist")
-	logging.info(logstring)
+	logging.info("Writing to logfile: "+logstring)
 	return True
 
 def logft(logstring,logfile=None,prefix=""):
