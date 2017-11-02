@@ -23,16 +23,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#"""
-# Usage:
-#     rsnapshot-once [-c CFGFILE] (sync|hourly|daily|weekly|monthly)
-#     Passes arguments to rsnapshot after validating the backup integrity and cleaning up if necessary.
-#     This is not meant to be used with sync_first enabled.
-# Options:
-#     -h --help
-#     -c CFGFILE    specify the configfile that rsnapshot should use
-#                   [default: /etc/rsnapshot.conf]
-#"""
 """
             Usage:
             rsnapshot-once [-c CFGFILE] (sync|hourly [<N>]|daily|monthly)
