@@ -145,7 +145,7 @@ except FileNotFoundError:
 	raise SystemExit(-1)
 
 if SYNC_FIRST == "1":
-	logft("Rsync is configured to use sync_fist. This is not supported for now.", LOGFILE)
+	logft("Rsnapshot is configured to use sync_fist. This is not supported for now.", LOGFILE)
 	abortlog(LOGFILE)
 	raise SystemExit(-1)
 
