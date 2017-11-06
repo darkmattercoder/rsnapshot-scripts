@@ -25,7 +25,7 @@
 
 """
             Usage:
-            rsnapshot-once [-c CFGFILE] (sync|hourly [<N>]|daily|monthly)
+            rsnapshot-once [-c CFGFILE] (sync|hourly [<N>]|daily|weekly|monthly)
             rsnapshot-once -h
 
             Options:
