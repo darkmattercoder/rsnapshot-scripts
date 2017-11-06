@@ -11,7 +11,7 @@ This is a php script that I included here to show where rsnapshot-once.py origin
 This is my port of the above script for python. Particularly I made it to run properly with Python version 3.4. I made some additions though.
 
 	Usage:
-	rsnapshot-once [-c CFGFILE] (sync|hourly [<N>]|daily|monthly)
+	rsnapshot-once [-c CFGFILE] (sync|hourly [<N>]|daily|weekly|monthly)
 	rsnapshot-once -h
 
 	Options:
