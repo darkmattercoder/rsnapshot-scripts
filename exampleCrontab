@@ -1,0 +1,42 @@
+# Edit this file to introduce tasks to be run by cron.
+#
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+#
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').#
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+#
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+#
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+#
+# For more information see the manual pages of crontab(5) and cron(8)
+#
+# m h  dom mon dow   command
+
+MAILTO=mail@you.net
+
+# Rsnapshot
+
+# Hourly
+# try a couple of times every 4 hours (specific hours to ensure that the dailies will work)
+44,49,54 2,6,10,14,18,22 * * * /your/path/to/rsnapshot-once.py -c /your/path/to/your-rsnapshot.conf hourly
+
+# DAILY
+# Try a couple of times a night, 8-11pm
+59 21,22,23 * * * /your/path/to/rsnapshot-once.py -c /your/path/to/your-rsnapshot.conf daily
+
+# WEEKLY
+# Try for 3 consecutive days, a couple of times a night, Mon-Wed 8-11pm
+0 20,21,22,23 * * 1,2,3 /your/path/to/rsnapshot-once.py -c /your/path/to/your-rsnapshot.conf weekly
+
+# MONTHLY
+# Try on 4 consecutive days, a couple of times a night, 1st-4th of each month
+57 20,21 1,2,3,4 * * /your/path/to/rsnapshot-once.py -c /your/path/to/your-rsnapshot.conf monthly
