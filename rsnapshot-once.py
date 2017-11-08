@@ -68,7 +68,7 @@ def logf(logstring, logfile=None, prefix=""):
 
 def logft(logstring, logfile=None, prefix=""):
 	'''Logs with timestamp'''
-	logstring = strftime("[%d/%b/%Y:%H:%M:%S] ") + logstring
+	logstring = strftime("[%Y-%M-%dT%H:%M:%S] ") + logstring
 	logf(logstring, logfile, prefix)
 	return True
 
