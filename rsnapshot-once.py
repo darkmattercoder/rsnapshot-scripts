@@ -52,7 +52,7 @@ from systemd import journal
 from docopt import docopt
 from natsort import versorted
 
-RSNAPSHOT_BINARY = "/usr/bin/rsnapshot"
+RSNAPSHOT_BINARY = "/usr/local/bin/rsnapshot"
 
 def logf(logstring, logfile=None, prefix=""):
 	'''Logs in rsnapshot's logfile when existing'''
@@ -303,6 +303,7 @@ if COMMAND != "sync":
 	logft("Writing rsnapshot-once pidfile (PID "+str(PID)+") to "+PIDFILE)
 	with open(PIDFILE, "w") as pf:
 		pf.write(str(PID))
+
 	SYSCMD = RSNAPSHOT_BINARY+" -c "+ARGS.get("-c")+" "+COMMAND
 	logft("NOW RUNNING JOB: "+SYSCMD+"\n", LOGFILE)
 	SYSCMD = SYSCMD.split(" ")
@@ -315,8 +316,12 @@ if COMMAND != "sync":
 		EXITCODE = retVal.returncode
 		COMPLETEPROCESS = retVal.output
 
-	for LINE in COMPLETEPROCESS.split("\n"):
-		logging.info(" rsnapshot: "+LINE)
+	for index, LINE in enumerate(COMPLETEPROCESS.split("\n")):
+		if index == 0:
+			logft(" captured output: "+LINE,LOGFILE,"\n")
+		else:
+			logft(" captured output: "+LINE,LOGFILE)
+		#logging.info(" captured output: "+LINE)
 		if "rsnapshot encountered an error" in LINE:
 			CONFIGERROR = True
 
