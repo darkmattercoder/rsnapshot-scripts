@@ -68,7 +68,7 @@ def logf(logstring, logfile=None, prefix=""):
 
 def logft(logstring, logfile=None, prefix=""):
 	'''Logs with timestamp'''
-	logstring = strftime("[%Y-%M-%dT%H:%M:%S] ") + logstring
+	logstring = strftime("[%Y-%m-%dT%H:%M:%S] ") + logstring
 	logf(logstring, logfile, prefix)
 	return True
 
@@ -280,7 +280,7 @@ if COMMAND != "sync":
 		elif COMMAND == "daily":
 			TIMEMIN = datetime.timedelta(hours=23)
 		elif COMMAND == "weekly":
-			TIMEMIN = datetime.timedelta(days=6.5)
+			TIMEMIN = datetime.timedelta(days=6, hours=22)
 		elif COMMAND == "monthly":
 			TIMEMIN = datetime.timedelta(days=29)
 		else:
