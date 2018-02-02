@@ -99,7 +99,8 @@ def parseConfig(configpath, configfile):
 				referencedpath = os.path.split(line.strip().split("\t")[1])[0]
 				referencedfile = os.path.split(line.strip().split("\t")[1])[1]
 				if not os.path.isabs(referencedpath):
-					logft("referenced file is given by relative path. This might lead to errors depending on where this script has been invoked from", LOGFILE)
+					logft("referenced file is given by relative path. This might lead to errors \
+					depending on where this script has been invoked from", LOGFILE)
 					referencedpath = configpath +"/"+ referencedpath
 				logft("referenced file: "+referencedpath+"/"+referencedfile, LOGFILE)
 				lf, sf, sr = parseConfig(referencedpath, referencedfile)
