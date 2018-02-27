@@ -283,7 +283,7 @@ if COMMAND != "sync":
 		elif COMMAND == "weekly":
 			TIMEMIN = datetime.timedelta(days=6, hours=22)
 		elif COMMAND == "monthly":
-			TIMEMIN = datetime.timedelta(days=29)
+			TIMEMIN = datetime.timedelta(days=28)
 		else:
 			logft("Error: This should not happen. ERROR.", LOGFILE)
 			abortlog(LOGFILE)
